@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body:has(div.sign){
+    background-color: #0039CB
+}
+.custom-height {
+    height: 500px;
+}
+
+.img-rectangle {
+    height: 300px;
+    width: auto;
+}
+
+.img-overlay {
+    height: 150px;
+    width: auto;
+}
+
+
