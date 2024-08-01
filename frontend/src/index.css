@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body:has(div.sign){
     background-color: #0039CB
 }
@@ -18,4 +19,43 @@ body:has(div.sign){
     width: auto;
 }
 
+/* styles.css */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body.sign {
+    background-color: #0039CB;
+}
+
+.custom-height {
+    height: 500px;
+}
+
+.img-rectangle {
+    height: 300px;
+    width: auto;
+}
+
+.img-overlay {
+    height: 150px;
+    width: auto;
+}
+
+:root {
+    --primary: #0039CB;
+}
+
+.home-button-bar {
+    background-color: var(--primary);
+}
+
+.home-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--primary);
+    z-index: 1000;
+}

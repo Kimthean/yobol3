@@ -1,5 +1,4 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-
 import HomePage from "./pages/home/HomePage";
 import LoginPage from "./pages/auth/login/LoginPage";
 import SignUpPage from "./pages/auth/signup/SignUpPage";
@@ -12,6 +11,7 @@ import ProfilePage from "./pages/profile/ProfilePage";
 import { Toaster } from "react-hot-toast";
 import { useQuery } from "@tanstack/react-query";
 import LoadingSpinner from "./components/common/LoadingSpinner";
+import CreatePost from "./pages/home/CreatePost.jsx";
 
 function App() {
 	const { data: authUser, isLoading } = useQuery({

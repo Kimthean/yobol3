@@ -1,11 +1,11 @@
-import { useState } from "react";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Posts from "../../components/common/Posts";
-import CreatePost from "./CreatePost";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Posts from '../../components/common/Posts';
 
 const HomePage = () => {
-	const [feedType, setFeedType] = useState("forYou");
+	const [feedType, setFeedType] = useState('forYou');
 
 	return (
 		<div className='d-flex flex-column w-100 min-vh-100'>
@@ -23,9 +23,10 @@ const HomePage = () => {
 					</div>
 				</div>
 			</nav>
+
 			<div className="justify-content-between d-flex row custom-height">
 				<div className="col-2 d-flex align-items-center bg-light py-4">
-					<div className="px-1 mx-auto">
+					<div className="mx-5">
 						<h1>Hello Natalice</h1>
 						<p>Share us the issues around your area.</p>
 						<div className="input-group">
@@ -67,33 +68,34 @@ const HomePage = () => {
 				</div>
 			</div>
 
-
 			<div className='flex-1 d-flex flex-column'>
-				{/* CREATE POST INPUT */}
-				<CreatePost/>
 
 				{/* POSTS */}
 				<Posts feedType={feedType}/>
 			</div>
 
 			{/* Header */}
-			<div className='d-flex border-top border-gray-700'>
+			<div className='home-bottom-bar d-flex border-top border-gray-700'>
 				<div
-					className="d-flex justify-content-center flex-1 p-3 hover:bg-secondary transition duration-300 cursor-pointer relative"
-					onClick={() => setFeedType("forYou")}
+					className="d-flex justify-content-center align-items-center flex-1 p-3 position-relative cursor-pointer"
+					onClick={() => setFeedType('forYou')}
 				>
-					For you
-					{feedType === "forYou" && (
-						<div className='position-absolute bottom-0 w-10 h-1 rounded-full bg-primary'></div>
+					<i className="bi text-7xl text-white bi-house"></i>
+					{feedType === 'forYou' && (
+						<div className='position-absolute bottom-0 w-100 h-1 rounded bg-primary'></div>
 					)}
 				</div>
+
+				{/*<Link to="/create-post" className="d-flex justify-content-center align-items-center flex-1 p-3 position-relative cursor-pointer">*/}
+				{/*	<i className="bi text-7xl text-white bi-plus-circle"></i>*/}
+				{/*</Link>*/}
 				<div
-					className='d-flex justify-content-center flex-1 p-3 hover:bg-secondary transition duration-300 cursor-pointer relative'
-					onClick={() => setFeedType("following")}
+					className='d-flex justify-content-center align-items-center flex-1 p-3 position-relative cursor-pointer'
+					onClick={() => setFeedType('following')}
 				>
-					Following
-					{feedType === "following" && (
-						<div className='position-absolute bottom-0 w-10 h-1 rounded-full bg-primary'></div>
+					<i className="bi text-7xl text-white bi-megaphone"></i>
+					{feedType === 'following' && (
+						<div className='position-absolute bottom-0 w-100 h-1 rounded bg-primary'></div>
 					)}
 				</div>
 			</div>
