@@ -20,7 +20,7 @@ const SignUpPage = () => {
 
 	const queryClient = useQueryClient();
 
-	const { mutate, isError, isPending, error } = useMutation({
+	const { mutate, isError, error } = useMutation({
 		mutationFn: async ({ email, username, fullName, password }) => {
 			try {
 				const res = await fetch("/api/auth/signup", {
@@ -42,16 +42,12 @@ const SignUpPage = () => {
 		},
 		onSuccess: () => {
 			toast.success("Account created successfully");
-
-			{
-				/* Added this line below, after recording the video. I forgot to add this while recording, sorry, thx. */
-			}
 			queryClient.invalidateQueries({ queryKey: ["authUser"] });
 		},
 	});
 
 	const handleSubmit = (e) => {
-		e.preventDefault(); // page won't reload
+		e.preventDefault();
 		mutate(formData);
 	};
 
